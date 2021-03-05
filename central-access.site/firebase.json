@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "central-access-site",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
+
+

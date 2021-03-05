@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "stocknews-central-access-site",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
