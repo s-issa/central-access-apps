@@ -13,11 +13,7 @@ jobs:
         with:
           find: "hello"
           replace: "world"
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: build
-          path: build
+          include: "index.html"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entrypoint: build/central-access-apps/central-access.site
