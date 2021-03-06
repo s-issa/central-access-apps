@@ -30,7 +30,7 @@ jobs:
         working-directory: ./temp
         run: |
           pwd
-          ls -l ./temp
+          ls -l
 
       - name: Run pwd in build
         working-directory: ./build
