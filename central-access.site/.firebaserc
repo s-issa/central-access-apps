@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "central-access-sites-prod"
+    "default": "central-access-sites-prod",
+    "stage": "central-access-sites-stage"
   },
   "targets": {
     "central-access-sites-prod": {
