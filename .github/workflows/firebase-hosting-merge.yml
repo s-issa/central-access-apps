@@ -12,8 +12,6 @@ jobs:
 
       - name: Checkout Project
         uses: actions/checkout@v2
-        with:
-          path: ./project
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
@@ -23,9 +21,8 @@ jobs:
           include: "index.html"
 
       - name: Copy files
-        working-directory: ./project
         run: |
-          cp -r ./project ./temp
+          cp -r /home/runner/work/central-access-apps/ ./temp
           pwd
 
       - name: Run pwd in project
