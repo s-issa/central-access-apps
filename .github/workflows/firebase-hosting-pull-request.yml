@@ -10,6 +10,14 @@ jobs:
         with:
           entrypoint: /home/runner/work/central-access-apps/central-access-apps/central-access.site
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CENTRAL_ACCESS_SITES_STAGE }}'
+          target: stage
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          entrypoint: /home/runner/work/central-access-apps/central-access-apps/central-access.site
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CENTRAL_ACCESS_SITES_PROD }}'
           target: prod
         env:
