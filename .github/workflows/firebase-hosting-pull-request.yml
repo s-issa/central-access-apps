@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-#     - run: npm ci && npm run build
-      - uses: jacobtomlinson/gha-find-replace@master
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "central-access"
-          replace: "replaced-access"
+          find: "hello"
+          replace: "world"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entrypoint: /home/runner/work/central-access-apps/central-access-apps/central-access.site
