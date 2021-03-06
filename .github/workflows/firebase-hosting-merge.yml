@@ -7,11 +7,13 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-20.04
     steps:
-      - name: Step 1 - Create a temporary build folder
-        run: mkdir ./build
+      - name: Step 1 - Create a temporary temp folder
+        run: mkdir ./temp
 
       - name: Checkout Project
         uses: actions/checkout@v2
+        with:
+          path: ./project
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
@@ -20,11 +22,21 @@ jobs:
           replace: "world"
           include: "index.html"
 
+      - name: Copy files
+        run: |
+          cp -r ./project ./temp
+
+      - name: Run pwd in project
+        working-directory: ./temp
+        run: |
+          pwd
+          ls -l ./temp
+
       - name: Run pwd in build
         working-directory: ./build
         run: |
           pwd
-#         ls -l ./build
+          ls -l ./build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
