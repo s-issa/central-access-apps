@@ -26,6 +26,10 @@ jobs:
         run: |
           cp -R ./project ./build
 
+      - name: Run dir
+        working-directory: ./build
+        run: pwd
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entrypoint: ./build/central-access-apps/central-access.site
