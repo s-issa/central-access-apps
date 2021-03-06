@@ -6,9 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 #     - run: npm ci && npm run build
-      - uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@master
+      - uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "central-access-site.web.app"
           replace: "replaced-access-site.web.app"
