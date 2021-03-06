@@ -7,23 +7,28 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-20.04
     steps:
-      - name: Step 1 - Create a temporary artifact downloads folder
-        run: mkdir build
-      - uses: actions/checkout@v2
+      - name: Step 1 - Create a temporary build folder
+        run: mkdir ./build
+
+      - name: Checkout Project
+        uses: actions/checkout@v2
+        with:
+          path: ./project
+
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "hello"
           replace: "world"
           include: "index.html"
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: build
-          path: build
+
+      - name: Copy files
+        run: |
+          cp -R ./project ./build
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entrypoint: build/central-access-apps/central-access.site
+          entrypoint: ./build/central-access-apps/central-access.site
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CENTRAL_ACCESS_SITES_PROD }}'
           channelId: live
