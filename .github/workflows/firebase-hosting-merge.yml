@@ -24,13 +24,19 @@ jobs:
 
       - name: Copy files
         run: |
-          cp -R ./project ./build
+          cp -r ./project/ ./build/
 
-      - name: Run dir
+      - name: Run pwd in project
+        working-directory: ./project
+        run: |
+          pwd
+          ls -l ./project
+
+      - name: Run pwd in build
         working-directory: ./build
         run: |
           pwd
-          ls
+          ls -l ./build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
