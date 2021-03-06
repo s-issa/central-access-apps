@@ -20,11 +20,6 @@ jobs:
           replace: "world"
           include: "index.html"
 
-      - name: Copy files
-        run: |
-          cp -r /home/runner/work/central-access-apps/ ./temp
-          pwd
-
       - name: Run pwd in project
         working-directory: ./temp
         run: |
