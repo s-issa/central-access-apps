@@ -10,7 +10,7 @@
       ]
     },
     {
-      "site": "stage-central-access-site",
+      "site": "stage-central-access-site-2",
       "public": "public",
       "ignore": [
         "firebase.json",
