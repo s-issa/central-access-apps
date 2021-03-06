@@ -8,9 +8,8 @@ jobs:
 #     - run: npm ci && npm run build
       - uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "central-access-site.web.app"
-          replace: "replaced-access-site.web.app"
-          include: "index.html"
+          find: "central-access"
+          replace: "replaced-access"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entrypoint: /home/runner/work/central-access-apps/central-access-apps/central-access.site
