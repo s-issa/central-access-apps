@@ -6,11 +6,15 @@
   "targets": {
     "central-access-sites-prod": {
       "hosting": {
-        "prod": [
-          "central-access-sites-prod"
-        ],
-        "stage": [
-          "central-access-sites-stage"
+        "prodCentral": [
+          "central-access-site"
+        ]
+      }
+    },
+    "central-access-sites-stage": {
+      "hosting": {
+        "stageCentral": [
+          "stage-central-access-site"
         ]
       }
     }
