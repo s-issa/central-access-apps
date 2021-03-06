@@ -28,7 +28,10 @@ jobs:
 
       - name: Run dir
         working-directory: ./build
-        run: pwd
+        run: |
+          pwd
+          cd /home/runner/work/central-access-apps/central-access-apps/build/central-access.site
+          pwd
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
