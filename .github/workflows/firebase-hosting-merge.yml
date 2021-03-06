@@ -24,7 +24,7 @@ jobs:
         working-directory: ./build
         run: |
           pwd
-          ls -l ./build
+#         ls -l ./build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
