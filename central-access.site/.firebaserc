@@ -1,19 +1,12 @@
 {
-  "projects": {
-    "default": "central-access-sites-prod",
-  },
   "targets": {
-    "central-access-sites-prod": {
-      "hosting": {
-        "prod": [
-          "central-access-site"
-        ]
-      }
-    },
-    "central-access-sites-prod": {
+    "stage": {
       "hosting": {
         "stage": [
           "stage-central-access-site-2"
+        ],
+        "prod": [
+          "central-access-site"
         ]
       }
     }

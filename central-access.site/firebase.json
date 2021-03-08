@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "central-access-site",
+      "target": "stage", 
       "public": "public",
       "ignore": [
         "firebase.json",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "site": "stage-central-access-site-2",
+      "target": "prod", 
       "public": "public",
       "ignore": [
         "firebase.json",
